@@ -1,14 +1,15 @@
-# Python 3
-
 from random import choice
 
-words = open('words.txt').read().split()
+WORDFILE = 'words.txt'
+MAXLIVES = 10
+BARRIER = '########################################'
+
+words = open(WORDFILE).read().split()
 answer = choice(words)
 letters = []
-lives = 10
+lives = MAXLIVES
 response = ""
 playerwin = False
-# print(answer)
 while lives:
     reveal = []
     for letter in answer:
@@ -18,16 +19,16 @@ while lives:
             reveal.append("-")
     if "".join(reveal) == answer:
         break
-    print("\n\n########################################")
-    print("\n" + response)
-    print("You have", lives, "lives.")
+    print("\n\n{}".format(BARRIER))
+    print("\n{}".format(response))
+    print("You have {} lives.".format(lives))
     if letters:
         print("\nHere are the letters you've used:")
         print(", ".join(letters))
     else:
         print("\n\n")
     print("\n" + "".join(reveal))
-    print("\n########################################\n")
+    print("\n{}\n".format(BARRIER))
     guess = input("What is your guess? ")
     if not (len(guess) == 1 and guess.isalpha() and guess.islower()):
         response = "Guess must be one lowercase letter."
@@ -42,10 +43,10 @@ while lives:
         lives -= 1
         letters.append(guess)
 if lives > 0:
-    print("\n\n########################################\n\n\n")
-    print("You win!\nThe answer was", answer + ".")
-    print("\n\n\n\n########################################\n")
+    print("\n\n{}\n\n\n".format(BARRIER))
+    print("You win!\nThe answer was {}.".format(answer))
+    print("\n\n\n\n{}\n".format(BARRIER))
 else:
-    print("\n\n########################################\n\n\n")
-    print("You lose.\nThe answer was", answer + ".")
-    print("\n\n\n\n########################################\n")
+    print("\n\n{}\n\n\n".format(BARRIER))
+    print("You lose.\nThe answer was {}.".format(answer))
+    print("\n\n\n\n{}\n".format(BARRIER))
