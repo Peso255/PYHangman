@@ -1,3 +1,5 @@
+# Hangman, by Peso255
+
 from random import choice
 
 WORDFILE = 'words.txt'
@@ -9,7 +11,6 @@ answer = choice(words)
 letters = []
 lives = MAXLIVES
 response = ""
-playerwin = False
 while lives:
     reveal = []
     for letter in answer:
@@ -43,10 +44,9 @@ while lives:
         lives -= 1
         letters.append(guess)
 if lives > 0:
-    print("\n\n{}\n\n\n".format(BARRIER))
-    print("You win!\nThe answer was {}.".format(answer))
-    print("\n\n\n\n{}\n".format(BARRIER))
+    response = "win!"
 else:
-    print("\n\n{}\n\n\n".format(BARRIER))
-    print("You lose.\nThe answer was {}.".format(answer))
-    print("\n\n\n\n{}\n".format(BARRIER))
+    response = "lose."
+print("\n\n{}\n\n\n".format(BARRIER))
+print("You {}\nThe answer was {}.".format(response, answer))
+print("\n\n\n\n{}\n".format(BARRIER))
