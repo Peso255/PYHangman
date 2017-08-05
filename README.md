@@ -15,4 +15,4 @@ Can be found and customised on the top portion of the source code.
 alphabetic word per line. Defaults to `words.txt`.
 - `MAXLIVES`: Maximum amount of unique letter guesses (lives). 
 Defaults to 10.
-- `BARRIER`: Border character to be printed. Defaults to hashes.
+- `BARRIER`: Border characters to be printed. Defaults to hashes (#).
