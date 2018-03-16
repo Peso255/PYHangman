@@ -1,8 +1,12 @@
+import os
 from random import choice
 
 WORDFILE = 'words.txt'
 MAXLIVES = 10
 BARRIER = '########################################'
+
+def cls():
+    os.system('cls' if os.name=='nt' else 'clear')
 
 words = open(WORDFILE).read().split()
 answer = choice(words)
@@ -19,6 +23,7 @@ while lives:
             reveal.append("-")
     if "".join(reveal) == answer:
         break
+    cls()
     print("\n\n{}".format(BARRIER))
     print("\n{}".format(response))
     print("You have {} lives.".format(lives))
@@ -42,6 +47,7 @@ while lives:
         response = "Sorry, your guess isn't in the word."
         lives -= 1
         letters.append(guess)
+cls()
 if lives > 0:
     print("\n\n{}\n\n\n".format(BARRIER))
     print("You win!\nThe answer was {}.".format(answer))
