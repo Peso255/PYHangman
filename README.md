@@ -19,7 +19,7 @@ Defaults to 10.
 
 ## Credits
 © Peso255 2017 - 
-[Website](https://peso.am), 
+[Website](https://peso.fun), 
 [Twitter](https://twitter.com/Peso255), 
 [Google+](https://google.com/+Peso255), 
 [Weibo](https://weibo.com/Peso255), 
